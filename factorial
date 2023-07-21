@@ -1,0 +1,45 @@
+//
+//  main.cpp
+//  factorial
+//
+//  Created by Ziad Attiya on 2023-07-20.
+//
+
+#include <iostream>
+using namespace std;
+
+
+unsigned long fact(unsigned long n){
+    if (n<2) return 1;
+    return n*fact(n-1);
+}
+int main(int argc, const char * argv[]) {
+    int input;
+    cout<<"Enter 1 for recursive. Enter 2 for non:";
+    cin>>input;
+    if (input ==1 ) {
+        cout<<"You have entered 1\n";
+        unsigned long i;
+        i=3;
+        i = fact(i);
+        std::cout << "Factorial is: "<<i<<endl;
+    }
+    if (input==2) {
+        cout<<"Non recursive\n";
+        cout<<"Enter a number: ";
+        cin>>input; //reusing this
+        if (input < 0) {cout<<"You cannot do that\n"; return 0;}
+        if (input<2)cout<<"\nfactorial is 1\n";
+        double result=1; //storing the sum
+        
+        if (input > 2){
+            for (double j =2; j<=input; j++){
+                result= result*j;
+            }//end of j for
+            cout<<"\nfactorial non-recursive is: "<<result<<std::endl;
+        }//end of else for computation
+    }
+    
+    
+    return 0;
+}
